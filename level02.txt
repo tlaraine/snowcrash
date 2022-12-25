@@ -1,0 +1,52 @@
+Check flag.Here is your token : f2av5il02puano7naaf6adaaf
+делаем ls
+видим файл level102.pcap
+гуглим что за расширение .pcap
+.pcap чем открыть
+https://serverfault.com/questions/38626/how-can-i-read-pcap-files-in-a-friendly-format
+
+
+scp -P 4242 level02@192.168.56.105:/home/user/level02/level02.pcap .
+на 43 строке видим слово password
+ищем на следущих строках пароль, смотрим data
+45 строка f
+47 строка t
+49 строка _
+51 строка w
+53 строка a
+55 строка n
+57 строка d
+59 строка r
+61 строка не печатный символ 7f
+http://book.itep.ru/10/ascii.htm
+смотрим в таблице ascii что это del
+ft_wand
+63 строка 7f
+ft_wan
+65 строка 7f
+ft_wa
+67 строка N
+ft_waN
+69 строка D
+ft_waND
+71 строка R
+ft_waNDR
+73 строка e
+ft_waNDRe
+75 строка l
+ft_waNDRel
+77 строка 7f
+ft_waNDRe
+79 строка L
+ft_waNDReL
+81 строка 0
+ft_waNDReL0
+83 строка 0
+ft_waNDReL0L
+85 строка не печатный символ 0d
+видим в таблице значение новая строка(энтер)
+наш пароль ft_waNDReL0L
+
+su flag02
+getflag
+Check flag.Here is your token : kooda2puivaav1idi4f57q8iq

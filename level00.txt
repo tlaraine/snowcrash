@@ -1,0 +1,13 @@
+ищем все файлы пользователя flag00
+find / -user flag00
+находим два файла с текстом
+level00@SnowCrash:~$ cat /rofs/usr/sbin/john
+cdiiddwpgswtgt
+level00@SnowCrash:~$ cat /usr/sbin/john
+cdiiddwpgswtgt
+пробуем войти level01 
+гуглим и видим что это какой то щифр
+nottoohardhere
+su flag00
+getflag
+x24ti5gi3x0ol2eh4esiuxias

