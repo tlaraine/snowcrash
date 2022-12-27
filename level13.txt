@@ -1,0 +1,29 @@
+su level13
+g1qKMiRpXf53AWhDaU7FEkczr
+
+level13@SnowCrash:~$ ls -l
+total 8
+-rwsr-sr-x 1 flag13 level13 7303 Aug 30  2015 level13
+
+level13@SnowCrash:~$ ./level13
+UID 2013 started us but we we expect 4242
+
+не правится uid
+
+запускаем в отладчике
+gdb ./level13
+
+i func - смотрим функции
+disas main
+видим функцию get uid
+ставим точку остановы
+b *adress cmp после call getuid
+r 
+запускаем
+set $eax=4242 подменяем значение регистра
+c 
+продолжаем
+your token is 2A31L79asukciNyi8uppkEuSx
+
+su level14
+2A31L79asukciNyi8uppkEuSx

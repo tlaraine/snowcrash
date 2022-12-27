@@ -1,3 +1,51 @@
  
 su level09
 25749xKZ8L7DkSCwJkT9dyv6f
+ ls -la
+-rwsr-sr-x 1 flag09  level09 7640 Mar  5  2016 level09
+
+----r--r-- 1 flag09  level09   26 Mar  5  2016 token
+
+level09@SnowCrash:~$ ./level09 token
+tpmhr
+level09@SnowCrash:~$ ltrace ./level09 token
+__libc_start_main(0x80487ce, 2, 0xbffff7d4, 0x8048aa0, 0x8048b10 <unfinished ...>
+ptrace(0, 0, 1, 0, 0xb7e2fe38)                                                                                                  = -1
+puts("You should not reverse this"You should not reverse this
+)                                                                                             = 28
++++ exited (status 1) +++
+
+level09@SnowCrash:~$ cat token
+f4kmm6p|=pnDBDu{
+
+"You should not reverse this"You should not reverse this
+
+level09@SnowCrash:~$ ./level09 aaa
+abc
+
+бинарник сдвигает элементы аргумента на значение индекса вправо
+создадим программу которая будет возвращать обратно это значение
+
+vim /tmp/reverc.c
+
+#include <stdio.h>
+
+int main(int argc, char **argv){
+        for(int i = 0; argv[1][i] != 0; ++i){
+                printf("%c", argv[1][i] - i);
+        }
+        printf("\n");
+}
+
+cd /tmp 
+gcc reverc.c -std=c99 
+cd 
+/tmp/a.out `cat token`
+f3iji1ju5yuevaus41q1afiuq
+
+
+su flag09 
+f3iji1ju5yuevaus41q1afiuq
+
+getflag
+Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
