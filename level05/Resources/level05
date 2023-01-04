@@ -1,6 +1,6 @@
 su level05
 ne2searoevaevoem4ov4ar8ap
-
+ssh level05@192.168.56.105 -p 4242
 find / -user flag05
 
 cat /usr/sbin/openarenaserver

